@@ -1,0 +1,10 @@
+{
+  "name": "Onboarding Hostelería · Responsable",
+  "short_name": "Onboarding",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#17324d",
+  "lang": "es"
+}
