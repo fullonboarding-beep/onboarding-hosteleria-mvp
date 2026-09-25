@@ -1,125 +1,536 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#17324d" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <title>Onboarding Hostelería · Responsable</title>
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17324d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Onboarding Hostelería · Demo conectado</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <style>
+:root{--navy:#17324d;--blue:#245d8c;--teal:#167a70;--teal-soft:#e7f6f2;--bg:#f4f6f8;--card:#fff;--line:#dbe2e8;--text:#17212b;--muted:#66737f;--good:#eaf5ee;--warn:#fff6df;--bad:#fbeaea;--shadow:0 6px 22px rgba(23,50,77,.06)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html{background:var(--bg)}body{margin:0;color:var(--text);background:var(--bg);font:16px/1.42 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}.app-shell{width:100%;max-width:430px;min-height:100vh;margin:0 auto;background:#fff;padding-bottom:calc(78px + env(safe-area-inset-bottom));box-shadow:0 0 0 1px rgba(0,0,0,.02)}.app-header{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px calc(14px + env(safe-area-inset-top));background:var(--navy);color:#fff}.app-header h1{margin:4px 0 0;font-size:18px;line-height:1.2}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.09em;color:#357c7c}.eyebrow.light{color:#9ce2d7}.icon-btn{width:42px;height:42px;border-radius:12px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;font-size:21px}.screen{padding:18px 18px 112px}.hidden{display:none!important}h2{margin:4px 0 14px;font-size:23px;line-height:1.18}h3{margin:22px 0 8px;font-size:17px}.muted,.fine{color:var(--muted);font-size:14px}.fine{font-size:12px}.lead{color:#556e7e;margin-top:-6px}.section-head,.person-head,.progress-head,.section-title-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.person-head{align-items:flex-start}.stack>*+*{margin-top:10px}.card,.info-card,.employee-card,.area-card,.observation-card,.training-detail,.metric-card,.compare-card{border:1px solid var(--line);border-radius:15px;background:var(--card);box-shadow:var(--shadow)}.card{padding:15px;margin-top:14px}.info-card{padding:15px;margin-top:18px;background:#f7fafb}.info-card p{margin:7px 0 0;color:var(--muted)}.gateway-screen{padding-top:16px}.gateway-hero{padding:22px;border-radius:20px;background:var(--navy);color:#fff;margin-bottom:18px}.gateway-hero h2{margin:7px 0 10px}.gateway-hero p{margin:0;color:#dbe7ef}.role-card{display:flex;align-items:center;gap:12px;width:100%;margin:10px 0;padding:16px;border:1px solid var(--line);border-radius:16px;background:#fff;text-align:left;color:inherit;font:inherit;box-shadow:var(--shadow)}.role-card:active{transform:scale(.996)}.role-icon{display:grid;place-items:center;width:44px;height:44px;flex:none;border-radius:12px;background:#eaf4f2;color:var(--teal);font-weight:900}.manager-role .role-icon{background:#edf2f6;color:var(--navy)}.role-copy{display:grid;gap:3px;flex:1}.role-copy strong{font-size:16px}.role-copy small{color:var(--muted)}.role-arrow{font-size:22px;color:var(--muted)}.status-pill{display:inline-flex;align-items:center;border-radius:999px;background:#eef3f7;color:#385166;padding:5px 9px;font-size:11px;font-weight:700;white-space:nowrap}.employee-selector-card{margin-bottom:14px}.compact-label{margin-top:0!important}.employee-hero{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px;border-radius:18px;background:linear-gradient(135deg,#17324d,#245d8c);color:#fff}.employee-hero h2{margin:5px 0 6px}.employee-hero p{margin:0;color:#dce9f2}.progress-ring{width:74px;height:74px;flex:none;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#8be3d1 var(--pct,0%),rgba(255,255,255,.18) 0);position:relative}.progress-ring:after{content:"";position:absolute;inset:7px;border-radius:50%;background:#17324d}.progress-ring span{position:relative;z-index:1;font-weight:900;font-size:14px}.section-title-row{margin-top:18px}.section-title-row h3{margin:0}.mini-kpi{font-size:12px;font-weight:800;color:var(--teal)}.module-card{width:100%;padding:15px;border:1px solid var(--line);border-radius:15px;background:#fff;text-align:left;color:inherit;font:inherit;box-shadow:var(--shadow)}.module-top{display:flex;justify-content:space-between;gap:10px}.module-day{display:inline-block;padding:4px 8px;border-radius:8px;background:#eaf4f2;color:#176b68;font-size:11px;font-weight:800}.module-title{display:block;margin:7px 0 3px;font-weight:800}.module-area{color:var(--muted);font-size:13px}.module-status{display:block;margin-top:9px;color:#2c706a;font-size:12px;font-weight:800}.module-status.reinforcement{color:#9a5a08}.lesson-steps{display:flex;gap:6px;margin:18px 0}.lesson-steps span{flex:1;text-align:center;background:#e1ecee;border-radius:8px;padding:9px 3px;font-size:11px;font-weight:800}.video-placeholder{background:#e8eef2;border-radius:12px;padding:16px;margin-top:14px}.video-placeholder strong{display:block}.video-placeholder p{margin-bottom:0;color:var(--muted)}.check-row{display:flex;gap:11px;align-items:flex-start;padding:13px;border-radius:10px;background:#f0f7f5}.check-row input{width:21px;height:21px;flex:none;accent-color:var(--teal)}.option-btn{width:100%;text-align:left;padding:13px;border:1px solid #bccbd5;background:#fff;border-radius:10px;color:#17324d;font:inherit}.option-btn.selected{border:2px solid var(--teal);background:var(--teal-soft)}.feedback{min-height:20px;margin-top:10px;font-size:14px;color:var(--blue)}.feedback.good,.feedback.success{color:#366e47}.feedback.try,.feedback.error{color:#9b3f3f}.progress-row-card{padding:14px}.meter{height:9px;background:#e1eaef;border-radius:99px;overflow:hidden;margin-top:8px}.meter span{height:100%;display:block;background:#269a88}.alert-card{border:1px solid #e3d29c;border-left:4px solid #cf9f2a;border-radius:13px;padding:12px;background:#fffaf0}.alert-card.incident{border-color:#e2bbbb;border-left-color:#b95c5c;background:#fff7f7}.alert-card.positive{border-color:#bdd9c5;border-left-color:#4d8b61;background:#f5fbf7}.alert-title{font-size:13px;font-weight:800}.alert-text{font-size:13px;margin-top:3px;color:#536573}.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 16px}.metric-card{padding:11px 9px;text-align:center}.metric-card span{display:block;color:var(--muted);font-size:11px}.metric-card strong{display:block;margin-top:3px;font-size:18px}.employee-card{width:100%;padding:15px;text-align:left;color:inherit;font:inherit}.employee-card:active{transform:scale(.995)}.employee-top{display:flex;justify-content:space-between;gap:10px}.employee-name{font-weight:800}.progress{height:8px;margin-top:9px;overflow:hidden;border-radius:999px;background:#e8edf1}.progress span{display:block;height:100%;width:0;background:var(--blue);transition:width .2s ease}.employee-kpis{display:flex;justify-content:space-between;gap:10px;margin-top:7px;color:var(--muted);font-size:12px}.live-dot{font-size:10px;font-weight:900;color:#b64d4d}.compare-card{padding:15px;margin:14px 0}.compare-row{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;margin:10px 0}.compare-row .progress{grid-column:1/-1;margin-top:1px}.eval-progress span{background:var(--teal)}.compare-caption{margin-top:10px;color:var(--muted);font-size:11px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:9px}.back-btn{min-height:42px;margin-left:-6px;padding:0 6px;border:0;background:none;color:var(--blue);font:inherit;font-weight:800}.area-card,.observation-card,.training-detail{padding:12px 13px}.area-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.area-name{font-size:14px}.trend{font-weight:800}.observation-card{border-left-width:4px}.observation-card.positive{border-left-color:#4d8b61}.observation-card.improve{border-left-color:#cf9f2a}.observation-card.incident{border-left-color:#b95c5c}.observation-meta{font-size:12px;color:var(--muted);margin-bottom:4px}.observation-text{font-size:14px}.training-detail .module-status{margin-top:4px}.field-label{display:block;margin:16px 0 7px;font-size:14px;font-weight:800}.control{width:100%;min-height:48px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--text);padding:12px;font:inherit}.control:focus{outline:2px solid rgba(36,93,140,.2);border-color:var(--blue)}textarea.control{resize:vertical}.fieldset-reset{border:0;padding:0;margin:0;min-width:0}.choice-stack{display:grid;gap:8px}.choice{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);border-radius:12px}.choice input{margin-top:3px;transform:scale(1.15)}.choice span{display:grid;gap:2px}.choice small{color:var(--muted)}.field-help{text-align:right;color:var(--muted);font-size:12px;margin-top:4px}.scale-note{font-size:12px;color:var(--muted);margin:-6px 0 12px}.evaluation-card{border:1px solid var(--line);border-radius:14px;padding:13px;margin:10px 0}.evaluation-card legend{padding:0 4px;font-weight:800;font-size:14px}.ratings{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:8px}.rating{display:flex;align-items:center;justify-content:center;min-height:44px;border:1px solid var(--line);border-radius:10px}.rating input{margin-right:5px}.btn{min-height:48px;border:0;border-radius:12px;padding:0 14px;font:inherit;font-weight:800}.btn-primary{background:var(--navy);color:#fff}.btn-secondary{background:#fff;color:var(--text);border:1px solid var(--line)}.btn.compact{min-height:44px;padding:0 12px;font-size:14px}.btn.full{width:100%;margin-top:12px}.bottom-nav{position:fixed;z-index:6;left:50%;bottom:0;transform:translateX(-50%);width:min(430px,100%);display:grid;grid-template-columns:repeat(2,1fr);padding:7px 8px calc(7px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(255,255,255,.97);backdrop-filter:blur(12px)}#managerNav{grid-template-columns:repeat(3,1fr)}.bottom-nav button{display:grid;justify-items:center;gap:2px;min-height:48px;border:0;border-radius:10px;background:transparent;color:#4f5f6c;font:inherit}.bottom-nav button.active{background:#eef3f7;color:var(--navy);font-weight:800}.bottom-nav span{font-size:19px;line-height:1}.bottom-nav small{font-size:11px}@media(max-width:360px){.screen{padding-left:12px;padding-right:12px}.lesson-steps span{font-size:10px}.role-card{padding:13px}.metrics-grid{gap:5px}.metric-card{padding:10px 5px}}@media(min-width:700px){body{padding:22px}.app-shell{min-height:calc(100vh - 44px);border-radius:24px;overflow:hidden}.bottom-nav{bottom:22px;border-radius:0 0 24px 24px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+</style>
 </head>
 <body>
-  <div class="app-shell">
-    <header class="app-header">
-      <div>
-        <div class="eyebrow">ÁREA RESPONSABLE · MVP</div>
-        <h1>Onboarding Hostelería</h1>
+<div class="app-shell">
+  <header class="app-header">
+    <div>
+      <div class="eyebrow" id="headerEyebrow">DEMO CONECTADO</div>
+      <h1 id="headerTitle">Onboarding Hostelería</h1>
+    </div>
+    <button id="homeGatewayBtn" class="icon-btn hidden" type="button" aria-label="Volver al inicio">⌂</button>
+  </header>
+
+  <main>
+    <section id="screen-gateway" class="screen gateway-screen">
+      <div class="gateway-hero">
+        <div class="eyebrow light">MVP · FORMACIÓN + SEGUIMIENTO</div>
+        <h2>Dos zonas, un mismo proceso de onboarding</h2>
+        <p>Entra con un clic como nuevo empleado o como responsable para comprobar cómo se conectan formación, observaciones, evaluación y evolución.</p>
       </div>
-      <button id="resetDemoBtn" class="icon-btn" type="button" aria-label="Restablecer datos demo" title="Restablecer datos demo">↻</button>
-    </header>
 
-    <main>
-      <section id="screen-home" class="screen" aria-labelledby="homeTitle">
-        <div class="section-head">
-          <div>
-            <div class="muted">Restaurante Demo</div>
-            <h2 id="homeTitle">Equipo en onboarding</h2>
+      <button id="enterEmployeeBtn" class="role-card employee-role" type="button">
+        <span class="role-icon">E</span>
+        <span class="role-copy">
+          <strong>Zona Empleado</strong>
+          <small>Formación, práctica, casos, dudas y refuerzos.</small>
+        </span>
+        <span class="role-arrow">→</span>
+      </button>
+
+      <button id="enterManagerBtn" class="role-card manager-role" type="button">
+        <span class="role-icon">R</span>
+        <span class="role-copy">
+          <strong>Zona Empresa / Responsable</strong>
+          <small>Monitorización, observaciones, evaluación y alertas.</small>
+        </span>
+        <span class="role-arrow">→</span>
+      </button>
+
+      <div class="info-card">
+        <strong>Qué estamos probando</strong>
+        <p>Cuando el empleado aprende o completa una práctica, el responsable ve el avance. Cuando el responsable detecta una carencia, el empleado recibe un refuerzo formativo relacionado.</p>
+      </div>
+    </section>
+
+    <!-- EMPLEADO -->
+    <section id="screen-employee-home" class="screen hidden">
+      <div class="section-head">
+        <div>
+          <div class="muted">Área empleado</div>
+          <h2>Mi aprendizaje</h2>
+        </div>
+        <span class="status-pill">Demo</span>
+      </div>
+
+      <div class="card employee-selector-card">
+        <label class="field-label compact-label" for="employeeDemoSelect">Empleado demo</label>
+        <select id="employeeDemoSelect" class="control"></select>
+        <div class="fine">En el producto real cada empleado accedería a su propio perfil.</div>
+      </div>
+
+      <div class="employee-hero">
+        <div>
+          <div class="eyebrow light">TU RECORRIDO</div>
+          <h2 id="employeeWelcome">Bienvenido</h2>
+          <p id="employeeHeroText">Aprende el sistema de tu equipo paso a paso.</p>
+        </div>
+        <div class="progress-ring" id="employeeProgressRing"><span id="employeeProgressPct">0%</span></div>
+      </div>
+
+      <div id="employeeAlerts" class="stack"></div>
+
+      <div class="section-title-row">
+        <h3>Formación</h3>
+        <span id="employeeModulesSummary" class="mini-kpi"></span>
+      </div>
+      <div id="employeeModules" class="stack"></div>
+    </section>
+
+    <section id="screen-employee-lesson" class="screen hidden">
+      <button id="employeeLessonBack" class="back-btn" type="button">← Mi recorrido</button>
+      <div id="lessonStage" class="eyebrow"></div>
+      <h2 id="lessonTitle"></h2>
+      <p id="lessonGoal" class="lead"></p>
+      <div class="lesson-steps"><span>1 Aprende</span><span>2 Practica</span><span>3 Repasa</span></div>
+
+      <article class="card">
+        <h3>Aprende</h3>
+        <div id="lessonContent"></div>
+        <div id="lessonVideo"></div>
+      </article>
+
+      <article class="card">
+        <h3>Practica en el servicio</h3>
+        <p id="lessonPractice"></p>
+        <label class="check-row"><input type="checkbox" id="lessonPracticeDone"><span>He practicado este punto con mi responsable o compañero.</span></label>
+        <p class="fine">Esta marca registra aprendizaje. La evaluación laboral corresponde al responsable.</p>
+      </article>
+
+      <article class="card">
+        <h3>Comprueba lo aprendido</h3>
+        <p id="lessonQuestion"></p>
+        <div id="lessonOptions" class="choice-stack"></div>
+        <div id="lessonFeedback" class="feedback" role="status" aria-live="polite"></div>
+      </article>
+
+      <article class="card">
+        <h3>Mis dudas</h3>
+        <label class="fine" for="lessonNote">Anota algo que debas consultar con tu responsable.</label>
+        <textarea id="lessonNote" class="control" rows="3" maxlength="300" placeholder="Ej.: ¿Dónde consulto la ficha de alérgenos?"></textarea>
+        <button id="saveLessonNote" class="btn btn-secondary full" type="button">Guardar duda</button>
+        <div id="lessonNoteMessage" class="feedback" role="status" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <section id="screen-employee-progress" class="screen hidden">
+      <div class="section-head">
+        <div>
+          <div class="muted">Área empleado</div>
+          <h2>Mi progreso</h2>
+        </div>
+        <span id="employeeProgressBadge" class="status-pill"></span>
+      </div>
+      <p class="lead">Este resumen mide actividades de aprendizaje. No sustituye la evaluación del responsable.</p>
+      <div id="employeeProgressList" class="stack"></div>
+      <article class="card">
+        <h3>Cómo se valida mi trabajo</h3>
+        <p>Tu responsable observa el desempeño y registra evaluaciones en los días 1, 3, 7, 15 y 30. Formación y desempeño se muestran por separado.</p>
+      </article>
+    </section>
+
+    <!-- EMPRESA / RESPONSABLE -->
+    <section id="screen-manager-home" class="screen hidden">
+      <div class="section-head">
+        <div>
+          <div class="muted">Restaurante Demo</div>
+          <h2>Equipo en onboarding</h2>
+        </div>
+        <button id="quickObservationBtn" class="btn btn-primary compact" type="button">+ Registro</button>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card"><span>Activos</span><strong id="activeCount">0</strong></div>
+        <div class="metric-card"><span>Alertas</span><strong id="alertCount">0</strong></div>
+        <div class="metric-card"><span>Formación media</span><strong id="avgTraining">0%</strong></div>
+      </div>
+
+      <div id="managerEmployeeList" class="stack"></div>
+
+      <div class="section-title-row"><h3>Actividad reciente</h3><span class="live-dot">● EN VIVO</span></div>
+      <div id="managerActivity" class="stack"></div>
+    </section>
+
+    <section id="screen-manager-person" class="screen hidden">
+      <button class="back-btn" type="button" data-manager-go="home">← Equipo</button>
+      <div class="person-head">
+        <div>
+          <h2 id="managerPersonName"></h2>
+          <div id="managerPersonMeta" class="muted"></div>
+        </div>
+        <span id="managerPersonStatus" class="status-pill"></span>
+      </div>
+
+      <div class="compare-card">
+        <div class="compare-row">
+          <span>Formación</span><strong id="managerTrainingPct"></strong>
+          <div class="progress"><span id="managerTrainingBar"></span></div>
+        </div>
+        <div class="compare-row">
+          <span>Evaluación</span><strong id="managerEvaluationScore"></strong>
+          <div class="progress eval-progress"><span id="managerEvaluationBar"></span></div>
+        </div>
+        <div class="compare-caption">Formación = aprendizaje registrado · Evaluación = observación del responsable</div>
+      </div>
+
+      <div class="two-col">
+        <button id="managerPersonObservationBtn" class="btn btn-secondary" type="button">+ Observación</button>
+        <button id="managerPersonEvaluationBtn" class="btn btn-primary" type="button">Evaluar</button>
+      </div>
+
+      <h3>Evolución por área</h3>
+      <div id="managerPersonAreas" class="stack"></div>
+
+      <h3>Formación y refuerzos</h3>
+      <div id="managerTrainingDetail" class="stack"></div>
+
+      <h3>Registro reciente</h3>
+      <div id="managerPersonObservations" class="stack"></div>
+    </section>
+
+    <section id="screen-manager-observe" class="screen hidden">
+      <button id="managerObservationBack" class="back-btn" type="button">← Volver</button>
+      <h2>Observación rápida</h2>
+      <p class="lead">Una observación “A mejorar” o “Incidencia” puede generar un refuerzo formativo para el empleado.</p>
+      <form id="managerObservationForm" novalidate>
+        <label class="field-label" for="managerObservationEmployee">Empleado</label>
+        <select id="managerObservationEmployee" class="control" required></select>
+
+        <fieldset class="fieldset-reset">
+          <legend class="field-label">Tipo</legend>
+          <div class="choice-stack">
+            <label class="choice"><input type="radio" name="managerObservationType" value="Positivo" checked><span><strong>+ Punto positivo</strong><small>Conducta a reforzar.</small></span></label>
+            <label class="choice"><input type="radio" name="managerObservationType" value="A mejorar"><span><strong>△ A mejorar</strong><small>Genera recomendación de refuerzo.</small></span></label>
+            <label class="choice"><input type="radio" name="managerObservationType" value="Incidencia"><span><strong>! Incidencia</strong><small>Genera alerta y refuerzo.</small></span></label>
           </div>
-          <button id="quickAddBtn" class="btn btn-primary compact" type="button">+ Registro</button>
-        </div>
-        <div id="employeeList" class="stack"></div>
-        <div class="card">
-          <div class="card-title">Pendiente hoy</div>
-          <div class="task-row"><span>Laura García</span><strong>Día 7</strong></div>
-          <div class="task-row"><span>Juan Pérez</span><strong>Plan de mejora</strong></div>
-        </div>
-      </section>
+        </fieldset>
 
-      <section id="screen-person" class="screen hidden" aria-labelledby="personName">
-        <button class="back-btn" type="button" data-go="home">← Equipo</button>
-        <div class="person-head">
-          <div>
-            <h2 id="personName"></h2>
-            <div id="personMeta" class="muted"></div>
-          </div>
-          <span id="personStatus" class="status-pill"></span>
-        </div>
+        <label class="field-label" for="managerObservationArea">Área</label>
+        <select id="managerObservationArea" class="control" required>
+          <option>Producto</option><option>Mise en place</option><option>Servicio</option><option>Comunicación</option><option>Anticipación</option><option>Trabajo en equipo</option><option>Adaptación al sistema</option>
+        </select>
 
-        <div class="card">
-          <div class="progress-head"><span>Formación completada</span><strong id="personProgressText"></strong></div>
-          <div class="progress"><span id="personProgressBar"></span></div>
-        </div>
+        <label class="field-label" for="managerObservationNote">Nota breve</label>
+        <textarea id="managerObservationNote" class="control" rows="4" maxlength="180" placeholder="Ej.: Debe anticipar la reposición antes del pico." required></textarea>
+        <div class="field-help"><span id="managerNoteCounter">0</span>/180</div>
 
-        <div class="two-col">
-          <button id="personObservationBtn" class="btn btn-secondary" type="button">+ Observación</button>
-          <button id="personEvaluationBtn" class="btn btn-primary" type="button">Evaluar</button>
-        </div>
+        <button class="btn btn-primary full" type="submit">Guardar observación</button>
+        <div id="managerObservationMessage" class="feedback" role="status" aria-live="polite"></div>
+      </form>
+    </section>
 
-        <h3>Evolución</h3>
-        <div id="personAreas" class="stack"></div>
+    <section id="screen-manager-evaluate" class="screen hidden">
+      <button id="managerEvaluationBack" class="back-btn" type="button">← Ficha</button>
+      <div class="muted">Evaluación de seguimiento</div>
+      <h2 id="managerEvaluationTitle"></h2>
+      <div class="scale-note">1 No cumple · 2 En desarrollo · 3 Cumple · 4 Destaca</div>
+      <form id="managerEvaluationForm" novalidate></form>
+      <div id="managerEvaluationMessage" class="feedback" role="status" aria-live="polite"></div>
+    </section>
+  </main>
 
-        <h3>Registro reciente</h3>
-        <div id="personObservations" class="stack"></div>
-      </section>
+  <nav id="employeeNav" class="bottom-nav hidden" aria-label="Navegación empleado">
+    <button type="button" data-employee-nav="home"><span>⌂</span><small>Formación</small></button>
+    <button type="button" data-employee-nav="progress"><span>▥</span><small>Progreso</small></button>
+  </nav>
 
-      <section id="screen-observe" class="screen hidden" aria-labelledby="observeTitle">
-        <button id="observationBackBtn" class="back-btn" type="button">← Volver</button>
-        <h2 id="observeTitle">Observación rápida</h2>
-        <div class="muted">Pensada para registrarse durante el servicio.</div>
+  <nav id="managerNav" class="bottom-nav hidden" aria-label="Navegación responsable">
+    <button type="button" data-manager-nav="home"><span>⌂</span><small>Equipo</small></button>
+    <button type="button" data-manager-nav="observe"><span>＋</span><small>Registro</small></button>
+    <button type="button" data-manager-nav="evaluate"><span>✓</span><small>Evaluar</small></button>
+  </nav>
+</div>
+<script>
+(()=>{
+'use strict';
 
-        <form id="observationForm" novalidate>
-          <label class="field-label" for="observationEmployee">Empleado</label>
-          <select id="observationEmployee" class="control" required></select>
+const STORAGE_KEY='onboarding_hosteleria_integrado_v2';
+const CHANNEL_NAME='onboarding_hosteleria_demo_sync';
+const channel=('BroadcastChannel' in window)?new BroadcastChannel(CHANNEL_NAME):null;
 
-          <fieldset class="fieldset-reset">
-            <legend class="field-label">Tipo</legend>
-            <div class="choice-stack">
-              <label class="choice"><input type="radio" name="observationType" value="Positivo" checked /> <span><strong>+ Punto positivo</strong><small>Conducta que conviene reforzar.</small></span></label>
-              <label class="choice"><input type="radio" name="observationType" value="A mejorar" /> <span><strong>△ A mejorar</strong><small>Aspecto a corregir o entrenar.</small></span></label>
-              <label class="choice"><input type="radio" name="observationType" value="Incidencia" /> <span><strong>! Incidencia</strong><small>Hecho relevante que requiere seguimiento.</small></span></label>
-            </div>
-          </fieldset>
+const modules=[
+ {day:1,title:'Conoce tu puesto y tu equipo',area:'Integración y comunicación',goal:'Identifica tus funciones, a quién pedir ayuda y cómo comunicar una incidencia.',points:['Confirma quién es tu responsable directo y quién cubre su ausencia.','Pregunta qué decisiones puedes tomar y cuáles requieren autorización.','Cuando detectes un problema, comunica el hecho y su urgencia por el canal acordado.'],practice:'Identifica a tu responsable y ensaya cómo comunicarías una incidencia durante el servicio.',question:'Si un cliente pregunta por un alérgeno y no tienes información fiable, ¿qué haces?',options:['Le das una respuesta probable para no retrasar el servicio.','Consultas la información oficial del establecimiento y avisas al responsable antes de responder.','Cambias de tema y sigues con otra mesa.'],correct:1,why:'La información sobre alérgenos debe confirmarse con la fuente y el protocolo del establecimiento.',videoUrl:''},
+ {day:3,title:'Prepara el servicio',area:'Mise en place y organización',goal:'Revisa tu zona, encuentra material y comunica lo que falta antes del servicio.',points:['Consulta la lista de preparación de tu puesto y turno.','Comprueba limpieza, material y reposiciones con un compañero.','Comunica faltantes y prioridades al responsable antes de abrir.'],practice:'Realiza la preparación de tu zona con la lista real del establecimiento.',question:'Falta material imprescindible diez minutos antes de abrir. ¿Qué haces primero?',options:['Esperas a que alguien lo detecte.','Lo comunicas y acuerdas una solución o prioridad con el responsable.','Improvisas un sustituto sin avisar.'],correct:1,why:'Anticiparse también consiste en comunicar faltantes a tiempo.',videoUrl:''},
+ {day:7,title:'Observa y atiende',area:'Servicio y anticipación',goal:'Aprende a observar mesas y coordinarte con el equipo durante el servicio.',points:['Revisa tus mesas de forma regular sin interrumpir innecesariamente.','Comunica a cocina y sala cambios o problemas por el canal acordado.','Pide apoyo cuando el volumen de trabajo supere tu capacidad.'],practice:'Con supervisión, atiende una zona y comenta qué necesidad detectaste antes de que te la pidieran.',question:'Un plato tarda más de lo previsto y el cliente pregunta. ¿Cuál es la mejor respuesta?',options:['Prometes que llegará inmediatamente sin comprobarlo.','Compruebas el estado con cocina y comunicas al cliente lo confirmado.','Evitas volver a esa mesa hasta que salga el plato.'],correct:1,why:'Verifica el estado real y comunica con claridad, siguiendo el protocolo local.',videoUrl:''},
+ {day:15,title:'Producto y recomendación',area:'Producto y venta',goal:'Responde con seguridad sobre la carta y recomienda a partir de lo que necesita el cliente.',points:['Estudia los productos principales y sus descripciones oficiales.','No inventes ingredientes, disponibilidad ni alérgenos.','Escucha preferencias y confirma cualquier información incierta.'],practice:'Explica dos productos reales de la carta y practica una recomendación con tu responsable.',question:'No recuerdas un ingrediente de un plato. ¿Qué haces?',options:['Lo deduces por el nombre del plato.','Consultas la ficha o preguntas antes de recomendarlo.','Afirmas que no lo lleva.'],correct:1,why:'Una recomendación útil se basa en información verificada.',videoUrl:''},
+ {day:30,title:'Consolida tu forma de trabajar',area:'Autonomía y mejora',goal:'Repasa tu evolución y prepara una conversación concreta sobre fortalezas y puntos a mejorar.',points:['Revisa tareas que ya haces con autonomía y las que requieren apoyo.','Lleva ejemplos concretos de situaciones vividas.','Acuerda con tu responsable un siguiente objetivo observable.'],practice:'Comparte un logro, una dificultad y una propuesta de mejora en la conversación de seguimiento.',question:'Recibes una corrección sobre un procedimiento interno. ¿Cuál es el mejor siguiente paso?',options:['Sigues usando el método que aprendiste antes.','Pides que te expliquen el procedimiento, lo aplicas y confirmas si lo has entendido.','Discutes la corrección delante del cliente.'],correct:1,why:'La adaptación se demuestra aplicando el procedimiento del establecimiento y pidiendo aclaraciones.',videoUrl:''}
+];
 
-          <label class="field-label" for="observationArea">Área</label>
-          <select id="observationArea" class="control" required>
-            <option>Producto</option>
-            <option>Mise en place</option>
-            <option>Servicio</option>
-            <option>Comunicación</option>
-            <option>Anticipación</option>
-            <option>Trabajo en equipo</option>
-            <option>Adaptación al sistema</option>
-          </select>
+const evaluationCriteria=['Conocimiento de producto','Mise en place','Comunicación','Anticipación','Trabajo en equipo','Adaptación al sistema'];
+const criterionAreaMap={
+ 'Conocimiento de producto':'Producto',
+ 'Mise en place':'Mise en place',
+ 'Comunicación':'Comunicación',
+ 'Anticipación':'Anticipación',
+ 'Trabajo en equipo':'Trabajo en equipo',
+ 'Adaptación al sistema':'Adaptación al sistema'
+};
+const areaModuleMap={
+ 'Producto':3,'Mise en place':1,'Servicio':2,'Comunicación':0,'Anticipación':2,'Trabajo en equipo':4,'Adaptación al sistema':4
+};
 
-          <label class="field-label" for="observationNote">Nota breve</label>
-          <textarea id="observationNote" class="control" rows="4" maxlength="180" placeholder="Ej.: Se anticipó a reponer material antes del servicio." required></textarea>
-          <div class="field-help"><span id="noteCounter">0</span>/180 caracteres</div>
+const seedActivities={
+ juan:{0:{practiced:true,answer:1,note:''},1:{practiced:true,answer:1,note:''},2:{practiced:true,answer:null,note:''},3:{practiced:true,answer:null,note:''}},
+ laura:{0:{practiced:true,answer:1,note:''},1:{practiced:true,answer:null,note:''}},
+ pedro:{0:{practiced:true,answer:1,note:''},1:{practiced:true,answer:1,note:''},2:{practiced:true,answer:1,note:''},3:{practiced:true,answer:1,note:''},4:{practiced:true,answer:1,note:''}}
+};
 
-          <button class="btn btn-primary full" type="submit">Guardar observación</button>
-          <div id="observationMessage" class="feedback" role="status" aria-live="polite"></div>
-        </form>
-      </section>
+const initialData={
+ version:2,
+ selectedEmployeeId:'juan',
+ staff:[
+  {id:'juan',name:'Juan Pérez',role:'Camarero sala',day:15,status:'Evolución positiva',areas:{Producto:[1,2,3],'Mise en place':[2,3],Servicio:[2,3,3],Comunicación:[2,2,3],Anticipación:[1,2,2],'Trabajo en equipo':[3,3,4],'Adaptación al sistema':[2,3]},observations:[{type:'Positivo',area:'Servicio',note:'Buena gestión de una reclamación.',date:'Hoy'},{type:'A mejorar',area:'Anticipación',note:'Preparar reposición antes del pico.',date:'Ayer'}],activities:seedActivities.juan,reinforcements:{2:{active:true,source:'Observación',reason:'Anticipación'}},employeeNotifications:[{kind:'reinforcement',text:'Refuerzo recomendado: Observa y atiende · Anticipación.',date:'Ayer'}],evaluations:[{date:'Día 7',scores:{'Conocimiento de producto':3,'Mise en place':3,'Comunicación':3,'Anticipación':2,'Trabajo en equipo':4,'Adaptación al sistema':3}}]},
+  {id:'laura',name:'Laura García',role:'Ayudante sala',day:7,status:'En desarrollo',areas:{Producto:[1,2],'Mise en place':[2,2],Servicio:[2,3],Comunicación:[2,2],Anticipación:[2,2],'Trabajo en equipo':[3,3],'Adaptación al sistema':[2,2]},observations:[{type:'A mejorar',area:'Producto',note:'Reforzar carta y alérgenos.',date:'Hoy'}],activities:seedActivities.laura,reinforcements:{3:{active:true,source:'Observación',reason:'Producto'}},employeeNotifications:[{kind:'reinforcement',text:'Refuerzo recomendado: Producto y recomendación · Producto.',date:'Hoy'}],evaluations:[{date:'Día 3',scores:{'Conocimiento de producto':2,'Mise en place':2,'Comunicación':2,'Anticipación':2,'Trabajo en equipo':3,'Adaptación al sistema':2}}]},
+  {id:'pedro',name:'Pedro López',role:'Camarero barra',day:30,status:'Onboarding completado',areas:{Producto:[2,3,4],'Mise en place':[2,3,4],Servicio:[2,3,4],Comunicación:[3,3,4],Anticipación:[2,3,4],'Trabajo en equipo':[3,4,4],'Adaptación al sistema':[3,4]},observations:[{type:'Positivo',area:'Trabajo en equipo',note:'Apoya al resto sin indicación.',date:'Ayer'}],activities:seedActivities.pedro,reinforcements:{},employeeNotifications:[],evaluations:[{date:'Día 30',scores:{'Conocimiento de producto':4,'Mise en place':4,'Comunicación':4,'Anticipación':4,'Trabajo en equipo':4,'Adaptación al sistema':4}}]}
+ ],
+ managerActivity:[
+  {kind:'training',text:'Juan Pérez completó el caso del Día 7.',date:'Hoy'},
+  {kind:'alert',text:'Laura García tiene refuerzo pendiente en Producto.',date:'Hoy'},
+  {kind:'positive',text:'Pedro López completó su recorrido formativo.',date:'Ayer'}
+ ]
+};
 
-      <section id="screen-evaluate" class="screen hidden" aria-labelledby="evaluationTitle">
-        <button id="evaluationBackBtn" class="back-btn" type="button">← Ficha</button>
-        <div class="muted">Evaluación de seguimiento</div>
-        <h2 id="evaluationTitle"></h2>
-        <div class="scale-note">1 No cumple · 2 En desarrollo · 3 Cumple · 4 Destaca</div>
+let data=loadData();
+let currentRole='gateway';
+let currentEmployeeId=data.selectedEmployeeId||'juan';
+let currentLessonIndex=0;
+let managerPreviousScreen='manager-home';
 
-        <form id="evaluationForm" novalidate></form>
-        <div id="evaluationMessage" class="feedback" role="status" aria-live="polite"></div>
-      </section>
-    </main>
+const $=id=>document.getElementById(id);
+const deepClone=v=>JSON.parse(JSON.stringify(v));
+function migrateOrReset(parsed){
+ if(!parsed||parsed.version!==2||!Array.isArray(parsed.staff)) return deepClone(initialData);
+ return parsed;
+}
+function loadData(){
+ try{return migrateOrReset(JSON.parse(localStorage.getItem(STORAGE_KEY)));}catch{return deepClone(initialData);}
+}
+function saveData({broadcast=true}={}){
+ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));if(broadcast&&channel)channel.postMessage({type:'sync'});return true;}catch{return false;}
+}
+function reloadSharedData(){const keep=currentEmployeeId;data=loadData();currentEmployeeId=data.staff.some(s=>s.id===keep)?keep:(data.selectedEmployeeId||data.staff[0].id);renderCurrentView();}
+window.addEventListener('storage',e=>{if(e.key===STORAGE_KEY)reloadSharedData();});
+if(channel)channel.addEventListener('message',e=>{if(e.data&&e.data.type==='sync')reloadSharedData();});
 
-    <nav class="bottom-nav" aria-label="Navegación principal">
-      <button type="button" data-nav="home"><span>⌂</span><small>Equipo</small></button>
-      <button type="button" data-nav="observe"><span>＋</span><small>Registro</small></button>
-      <button type="button" data-nav="evaluate"><span>✓</span><small>Evaluar</small></button>
-    </nav>
-  </div>
+function employeeById(id){return data.staff.find(s=>s.id===id)||data.staff[0];}
+function currentEmployee(){return employeeById(currentEmployeeId);}
+function record(employee,index){return employee.activities?.[index]||{practiced:false,answer:null,note:''};}
+function modulePoints(employee,index){const a=record(employee,index);return Number(!!a.practiced)+Number(a.answer===modules[index].correct);}
+function trainingPct(employee){const total=modules.reduce((sum,_,i)=>sum+modulePoints(employee,i),0);return Math.round(total/(modules.length*2)*100);}
+function completedModules(employee){return modules.filter((_,i)=>modulePoints(employee,i)===2).length;}
+function latestEvaluation(employee){return employee.evaluations?.[employee.evaluations.length-1]||null;}
+function evaluationAverage(employee){
+ const latest=latestEvaluation(employee);
+ if(latest){const vals=Object.values(latest.scores).filter(v=>Number.isFinite(v));return vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:0;}
+ const vals=Object.values(employee.areas||{}).map(v=>Array.isArray(v)&&v.length?v[v.length-1]:null).filter(v=>Number.isFinite(v));
+ return vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:0;
+}
+function activeReinforcements(employee){return Object.entries(employee.reinforcements||{}).filter(([,v])=>v&&v.active);}
+function todayLabel(){return 'Ahora';}
 
-  <script src="app.js" defer></script>
+function showScreen(id){
+ document.querySelectorAll('main .screen').forEach(s=>s.classList.toggle('hidden',s.id!=='screen-'+id));
+ window.scrollTo({top:0,behavior:'auto'});
+}
+function setHeader(role){
+ const homeBtn=$('homeGatewayBtn');
+ homeBtn.classList.toggle('hidden',role==='gateway');
+ if(role==='employee'){$('headerEyebrow').textContent='ÁREA EMPLEADO';$('headerTitle').textContent='Mi aprendizaje';}
+ else if(role==='manager'){$('headerEyebrow').textContent='ÁREA EMPRESA';$('headerTitle').textContent='Onboarding Hostelería';}
+ else{$('headerEyebrow').textContent='DEMO CONECTADO';$('headerTitle').textContent='Onboarding Hostelería';}
+}
+function setNav(role,active){
+ $('employeeNav').classList.toggle('hidden',role!=='employee');
+ $('managerNav').classList.toggle('hidden',role!=='manager');
+ document.querySelectorAll('[data-employee-nav]').forEach(b=>b.classList.toggle('active',b.dataset.employeeNav===active));
+ document.querySelectorAll('[data-manager-nav]').forEach(b=>b.classList.toggle('active',b.dataset.managerNav===active));
+}
+function enterGateway(){currentRole='gateway';setHeader('gateway');setNav('gateway');showScreen('gateway');}
+function enterEmployee(){currentRole='employee';setHeader('employee');setNav('employee','home');showScreen('employee-home');renderEmployeeHome();}
+function enterManager(){currentRole='manager';setHeader('manager');setNav('manager','home');showScreen('manager-home');renderManagerHome();}
+function renderCurrentView(){
+ const visible=[...document.querySelectorAll('main .screen:not(.hidden)')][0];
+ if(!visible)return;
+ const id=visible.id.replace('screen-','');
+ if(id==='employee-home')renderEmployeeHome();
+ if(id==='employee-lesson')renderEmployeeLesson();
+ if(id==='employee-progress')renderEmployeeProgress();
+ if(id==='manager-home')renderManagerHome();
+ if(id==='manager-person')renderManagerPerson();
+ if(id==='manager-observe')fillManagerEmployeeSelect();
+ if(id==='manager-evaluate')renderManagerEvaluation();
+}
+
+function fillEmployeeDemoSelect(){
+ const select=$('employeeDemoSelect');
+ const old=select.value||currentEmployeeId;
+ select.replaceChildren();
+ data.staff.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=s.name+' · '+s.role;select.appendChild(o);});
+ select.value=data.staff.some(s=>s.id===old)?old:data.staff[0].id;
+}
+function renderEmployeeHome(){
+ const e=currentEmployee();
+ fillEmployeeDemoSelect();$('employeeDemoSelect').value=e.id;
+ const pct=trainingPct(e);
+ $('employeeWelcome').textContent='Hola, '+e.name.split(' ')[0];
+ $('employeeHeroText').textContent='Día '+e.day+' de 30 · '+e.role;
+ $('employeeProgressPct').textContent=pct+'%';
+ $('employeeProgressRing').style.setProperty('--pct',pct+'%');
+ $('employeeModulesSummary').textContent=completedModules(e)+' / '+modules.length+' completos';
+ renderEmployeeAlerts(e);
+ const host=$('employeeModules');host.replaceChildren();
+ modules.forEach((m,i)=>{
+  const b=document.createElement('button');b.type='button';b.className='module-card';
+  const top=document.createElement('div');top.className='module-top';
+  const left=document.createElement('div');
+  const day=document.createElement('span');day.className='module-day';day.textContent='Día '+m.day;
+  const title=document.createElement('span');title.className='module-title';title.textContent=m.title;
+  const area=document.createElement('span');area.className='module-area';area.textContent=m.area;
+  left.append(day,title,area);
+  const pts=modulePoints(e,i);const rein=e.reinforcements?.[i]?.active;
+  const status=document.createElement('span');status.className='module-status'+(rein?' reinforcement':'');
+  status.textContent=rein?'Refuerzo pendiente':pts===2?'Completado':pts>0?'En curso':'Empezar';
+  top.append(left);b.append(top,status);
+  b.addEventListener('click',()=>{currentLessonIndex=i;setNav('employee','home');showScreen('employee-lesson');renderEmployeeLesson();});
+  host.appendChild(b);
+ });
+}
+function renderEmployeeAlerts(e){
+ const box=$('employeeAlerts');box.replaceChildren();
+ const rein=activeReinforcements(e);
+ if(!rein.length&&!(e.employeeNotifications||[]).length)return;
+ const recent=(e.employeeNotifications||[]).slice(0,2);
+ recent.forEach(n=>{
+  const d=document.createElement('div');d.className='alert-card '+(n.kind==='incident'?'incident':n.kind==='positive'?'positive':'');
+  d.innerHTML='<div class="alert-title"></div><div class="alert-text"></div>';
+  d.querySelector('.alert-title').textContent=n.kind==='reinforcement'?'Refuerzo de formación':n.kind==='positive'?'Reconocimiento':'Aviso';
+  d.querySelector('.alert-text').textContent=n.text+' · '+n.date;
+  box.appendChild(d);
+ });
+}
+function renderEmployeeLesson(){
+ const e=currentEmployee(),m=modules[currentLessonIndex],a=record(e,currentLessonIndex);
+ $('lessonStage').textContent='DÍA '+m.day+' · '+m.area.toUpperCase();
+ $('lessonTitle').textContent=m.title;$('lessonGoal').textContent=m.goal;
+ const ul=document.createElement('ul');m.points.forEach(p=>{const li=document.createElement('li');li.textContent=p;ul.appendChild(li);});$('lessonContent').replaceChildren(ul);
+ const video=$('lessonVideo');video.replaceChildren();
+ if(m.videoUrl){const v=document.createElement('video');v.controls=true;v.preload='none';v.src=m.videoUrl;video.appendChild(v);}else{const holder=document.createElement('div');holder.className='video-placeholder';const strong=document.createElement('strong');strong.textContent='Vídeo del establecimiento: pendiente';const p=document.createElement('p');p.textContent='Aquí podrá añadirse una demostración grabada por el equipo para este tema.';holder.append(strong,p);video.appendChild(holder);}
+ $('lessonPractice').textContent=m.practice;$('lessonPracticeDone').checked=!!a.practiced;$('lessonQuestion').textContent=m.question;
+ const opts=$('lessonOptions');opts.replaceChildren();
+ m.options.forEach((o,j)=>{const b=document.createElement('button');b.type='button';b.className='option-btn'+(a.answer===j?' selected':'');b.textContent=o;b.addEventListener('click',()=>setEmployeeAnswer(j));opts.appendChild(b);});
+ const f=$('lessonFeedback');f.textContent=a.answer===null?'':(a.answer===m.correct?'Correcto. ':'Repasa esta situación. ')+m.why;f.className='feedback '+(a.answer===null?'':a.answer===m.correct?'good':'try');
+ $('lessonNote').value=a.note||'';$('lessonNoteMessage').textContent='';
+}
+function setEmployeeAnswer(answer){
+ const e=currentEmployee();const before=modulePoints(e,currentLessonIndex);e.activities=e.activities||{};e.activities[currentLessonIndex]={...record(e,currentLessonIndex),answer};
+ const after=modulePoints(e,currentLessonIndex);handleTrainingProgressChange(e,currentLessonIndex,before,after,'caso');saveData();renderEmployeeLesson();
+}
+function setEmployeePractice(done){
+ const e=currentEmployee();const before=modulePoints(e,currentLessonIndex);e.activities=e.activities||{};e.activities[currentLessonIndex]={...record(e,currentLessonIndex),practiced:done};
+ const after=modulePoints(e,currentLessonIndex);handleTrainingProgressChange(e,currentLessonIndex,before,after,'práctica');saveData();
+}
+function handleTrainingProgressChange(e,index,before,after,source){
+ if(after>before){
+  data.managerActivity.unshift({kind:'training',text:e.name+' actualizó '+source+' en Día '+modules[index].day+' · '+modules[index].area+'.',date:todayLabel()});
+ }
+ if(after===2&&before<2){
+  data.managerActivity.unshift({kind:'training',text:e.name+' completó Día '+modules[index].day+' · '+modules[index].area+'.',date:todayLabel()});
+  if(e.reinforcements?.[index]?.active){
+   e.reinforcements[index].active=false;
+   data.managerActivity.unshift({kind:'positive',text:e.name+' completó el refuerzo de '+modules[index].area+'.',date:todayLabel()});
+   e.employeeNotifications=e.employeeNotifications||[];
+   e.employeeNotifications.unshift({kind:'positive',text:'Refuerzo completado: '+modules[index].title+'.',date:todayLabel()});
+  }
+ }
+ data.managerActivity=data.managerActivity.slice(0,30);
+}
+function renderEmployeeProgress(){
+ const e=currentEmployee(),pct=trainingPct(e);$('employeeProgressBadge').textContent=pct+'% completado';
+ const box=$('employeeProgressList');box.replaceChildren();
+ modules.forEach((m,i)=>{const a=record(e,i),pts=modulePoints(e,i);const card=document.createElement('article');card.className='card progress-row-card';const strong=document.createElement('strong');strong.textContent='Día '+m.day+' · '+m.area;const meter=document.createElement('div');meter.className='meter';const fill=document.createElement('span');fill.style.width=(pts*50)+'%';meter.appendChild(fill);const p=document.createElement('p');p.className='fine';p.textContent=(a.practiced?'Práctica marcada':'Práctica pendiente')+' · '+(a.answer===m.correct?'Caso resuelto':'Caso pendiente o por repasar')+(e.reinforcements?.[i]?.active?' · Refuerzo pendiente':'');card.append(strong,meter,p);box.appendChild(card);});
+}
+
+function fillManagerEmployeeSelect(){
+ const select=$('managerObservationEmployee');const old=select.value||currentEmployeeId;select.replaceChildren();data.staff.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=s.name;select.appendChild(o);});select.value=data.staff.some(s=>s.id===old)?old:data.staff[0].id;
+}
+function renderManagerHome(){
+ $('activeCount').textContent=data.staff.filter(s=>s.day<30).length;
+ $('alertCount').textContent=data.staff.reduce((sum,s)=>sum+activeReinforcements(s).length,0);
+ $('avgTraining').textContent=Math.round(data.staff.reduce((sum,s)=>sum+trainingPct(s),0)/data.staff.length)+'%';
+ const host=$('managerEmployeeList');host.replaceChildren();
+ data.staff.forEach(s=>{
+  const b=document.createElement('button');b.type='button';b.className='employee-card';
+  const top=document.createElement('div');top.className='employee-top';const left=document.createElement('div');const name=document.createElement('div');name.className='employee-name';name.textContent=s.name;const meta=document.createElement('div');meta.className='muted';meta.textContent=s.role+' · Día '+s.day+' de 30';left.append(name,meta);const status=document.createElement('span');status.className='status-pill';status.textContent=s.status;top.append(left,status);
+  const progress=document.createElement('div');progress.className='progress';const fill=document.createElement('span');fill.style.width=trainingPct(s)+'%';progress.appendChild(fill);
+  const kpis=document.createElement('div');kpis.className='employee-kpis';const ev=evaluationAverage(s);kpis.innerHTML='<span>Formación <strong>'+trainingPct(s)+'%</strong></span><span>Evaluación <strong>'+ev.toFixed(1)+'/4</strong></span><span>Refuerzos <strong>'+activeReinforcements(s).length+'</strong></span>';
+  b.append(top,progress,kpis);b.addEventListener('click',()=>{currentEmployeeId=s.id;saveData();showManagerPerson();});host.appendChild(b);
+ });
+ renderManagerActivity();fillManagerEmployeeSelect();
+}
+function renderManagerActivity(){
+ const box=$('managerActivity');box.replaceChildren();const items=(data.managerActivity||[]).slice(0,6);
+ if(!items.length){const p=document.createElement('div');p.className='muted';p.textContent='Sin actividad registrada.';box.appendChild(p);return;}
+ items.forEach(a=>{const d=document.createElement('div');d.className='alert-card '+(a.kind==='alert'?'incident':a.kind==='positive'?'positive':'');const t=document.createElement('div');t.className='alert-title';t.textContent=a.kind==='training'?'Formación':a.kind==='positive'?'Evolución positiva':'Atención';const p=document.createElement('div');p.className='alert-text';p.textContent=a.text+' · '+a.date;d.append(t,p);box.appendChild(d);});
+}
+function showManagerPerson(){setNav('manager','home');showScreen('manager-person');renderManagerPerson();}
+function renderManagerPerson(){
+ const e=currentEmployee(),pct=trainingPct(e),avg=evaluationAverage(e);
+ $('managerPersonName').textContent=e.name;$('managerPersonMeta').textContent=e.role+' · Día '+e.day+' de 30';$('managerPersonStatus').textContent=e.status;
+ $('managerTrainingPct').textContent=pct+'%';$('managerTrainingBar').style.width=pct+'%';$('managerEvaluationScore').textContent=avg.toFixed(1)+'/4';$('managerEvaluationBar').style.width=Math.round(avg/4*100)+'%';
+ const areas=$('managerPersonAreas');areas.replaceChildren();Object.entries(e.areas||{}).forEach(([name,values])=>{if(!Array.isArray(values)||!values.length)return;const first=values[0],last=values[values.length-1],arrow=last>first?'↑':last<first?'↓':'→';const d=document.createElement('div');d.className='area-card';const row=document.createElement('div');row.className='area-row';const n=document.createElement('span');n.className='area-name';n.textContent=name;const t=document.createElement('span');t.className='trend';t.textContent=values.join(' → ')+' '+arrow;row.append(n,t);d.appendChild(row);areas.appendChild(d);});
+ const train=$('managerTrainingDetail');train.replaceChildren();modules.forEach((m,i)=>{const pts=modulePoints(e,i),rein=e.reinforcements?.[i]?.active;const d=document.createElement('div');d.className='training-detail';const title=document.createElement('strong');title.textContent='Día '+m.day+' · '+m.title;const status=document.createElement('span');status.className='module-status'+(rein?' reinforcement':'');status.textContent=(pts===2?'Completado':pts?'En curso':'Pendiente')+(rein?' · REFUERZO':'');d.append(title,status);train.appendChild(d);});
+ const obs=$('managerPersonObservations');obs.replaceChildren();(e.observations||[]).slice(0,8).forEach(o=>{const d=document.createElement('div');d.className='observation-card '+(o.type==='Positivo'?'positive':o.type==='Incidencia'?'incident':'improve');const meta=document.createElement('div');meta.className='observation-meta';meta.textContent=o.type+' · '+o.area+' · '+o.date;const tx=document.createElement('div');tx.className='observation-text';tx.textContent=o.note;d.append(meta,tx);obs.appendChild(d);});
+}
+function openManagerObservation(from){managerPreviousScreen=from;fillManagerEmployeeSelect();$('managerObservationEmployee').value=currentEmployeeId;clearManagerObservationMessage();setNav('manager','observe');showScreen('manager-observe');}
+function clearManagerObservationMessage(){$('managerObservationMessage').textContent='';$('managerObservationMessage').className='feedback';}
+function reinforcementFor(e,area,source,type){
+ const idx=areaModuleMap[area];if(idx===undefined)return null;e.reinforcements=e.reinforcements||{};e.reinforcements[idx]={active:true,source,reason:area};e.employeeNotifications=e.employeeNotifications||[];const text='Refuerzo recomendado: '+modules[idx].title+' · '+area+'.';e.employeeNotifications.unshift({kind:type==='Incidencia'?'incident':'reinforcement',text,date:todayLabel()});return idx;
+}
+function renderManagerEvaluation(){
+ const e=currentEmployee();$('managerEvaluationTitle').textContent=e.name+' · Día '+e.day;const form=$('managerEvaluationForm');form.replaceChildren();
+ evaluationCriteria.forEach((c,i)=>{const fs=document.createElement('fieldset');fs.className='evaluation-card';const legend=document.createElement('legend');legend.textContent=c;const ratings=document.createElement('div');ratings.className='ratings';[1,2,3,4].forEach(n=>{const label=document.createElement('label');label.className='rating';const input=document.createElement('input');input.type='radio';input.name='q'+i;input.value=String(n);input.required=true;label.append(input,document.createTextNode(' '+n));ratings.appendChild(label);});fs.append(legend,ratings);form.appendChild(fs);});
+ const noteLabel=document.createElement('label');noteLabel.className='field-label';noteLabel.htmlFor='managerEvaluationNote';noteLabel.textContent='Comentario general (opcional)';const note=document.createElement('textarea');note.id='managerEvaluationNote';note.className='control';note.rows=3;note.maxLength=220;note.placeholder='Resumen breve de la evaluación.';const submit=document.createElement('button');submit.type='submit';submit.className='btn btn-primary full';submit.textContent='Guardar evaluación';form.append(noteLabel,note,submit);$('managerEvaluationMessage').textContent='';$('managerEvaluationMessage').className='feedback';
+}
+
+$('enterEmployeeBtn').addEventListener('click',enterEmployee);$('enterManagerBtn').addEventListener('click',enterManager);$('homeGatewayBtn').addEventListener('click',enterGateway);
+$('employeeDemoSelect').addEventListener('change',e=>{currentEmployeeId=e.target.value;data.selectedEmployeeId=currentEmployeeId;saveData();renderEmployeeHome();});
+$('employeeLessonBack').addEventListener('click',()=>{setNav('employee','home');showScreen('employee-home');renderEmployeeHome();});
+$('lessonPracticeDone').addEventListener('change',e=>{setEmployeePractice(e.target.checked);renderEmployeeLesson();});
+$('saveLessonNote').addEventListener('click',()=>{const e=currentEmployee();const a=record(e,currentLessonIndex);const newNote=$('lessonNote').value.trim();e.activities=e.activities||{};e.activities[currentLessonIndex]={...a,note:newNote};if(newNote){data.managerActivity.unshift({kind:'alert',text:e.name+' anotó una duda en Día '+modules[currentLessonIndex].day+' · '+modules[currentLessonIndex].area+'.',date:todayLabel()});}const ok=saveData();$('lessonNoteMessage').textContent=ok?'Duda guardada y visible para seguimiento.':'No se pudo guardar el dato.';$('lessonNoteMessage').className='feedback '+(ok?'success':'error');});
+document.querySelectorAll('[data-employee-nav]').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.employeeNav==='home'){setNav('employee','home');showScreen('employee-home');renderEmployeeHome();}else{setNav('employee','progress');showScreen('employee-progress');renderEmployeeProgress();}}));
+
+document.querySelectorAll('[data-manager-go="home"]').forEach(b=>b.addEventListener('click',()=>{setNav('manager','home');showScreen('manager-home');renderManagerHome();}));
+$('quickObservationBtn').addEventListener('click',()=>openManagerObservation('manager-home'));
+$('managerPersonObservationBtn').addEventListener('click',()=>openManagerObservation('manager-person'));
+$('managerPersonEvaluationBtn').addEventListener('click',()=>{managerPreviousScreen='manager-person';setNav('manager','evaluate');showScreen('manager-evaluate');renderManagerEvaluation();});
+$('managerObservationBack').addEventListener('click',()=>{if(managerPreviousScreen==='manager-person')showManagerPerson();else{setNav('manager','home');showScreen('manager-home');renderManagerHome();}});
+$('managerEvaluationBack').addEventListener('click',showManagerPerson);
+document.querySelectorAll('[data-manager-nav]').forEach(b=>b.addEventListener('click',()=>{const t=b.dataset.managerNav;if(t==='home'){setNav('manager','home');showScreen('manager-home');renderManagerHome();}else if(t==='observe'){openManagerObservation('manager-home');}else{managerPreviousScreen='manager-home';setNav('manager','evaluate');showScreen('manager-evaluate');renderManagerEvaluation();}}));
+$('managerObservationNote').addEventListener('input',e=>$('managerNoteCounter').textContent=e.target.value.length);
+$('managerObservationForm').addEventListener('submit',e=>{
+ e.preventDefault();const id=$('managerObservationEmployee').value,type=(new FormData(e.currentTarget)).get('managerObservationType'),area=$('managerObservationArea').value,note=$('managerObservationNote').value.trim(),msg=$('managerObservationMessage');if(!id||!type||!area||!note){msg.textContent='Completa los campos obligatorios.';msg.className='feedback error';return;}const emp=employeeById(id);emp.observations=emp.observations||[];emp.observations.unshift({type,area,note,date:todayLabel()});currentEmployeeId=id;if(type==='A mejorar'||type==='Incidencia'){reinforcementFor(emp,area,'Observación',type);data.managerActivity.unshift({kind:'alert',text:emp.name+' necesita refuerzo en '+area+' tras una observación.',date:todayLabel()});}else{data.managerActivity.unshift({kind:'positive',text:'Punto positivo registrado para '+emp.name+' · '+area+'.',date:todayLabel()});}data.managerActivity=data.managerActivity.slice(0,30);saveData();$('managerObservationNote').value='';$('managerNoteCounter').textContent='0';msg.textContent=(type==='Positivo'?'Observación guardada.':'Observación guardada y refuerzo enviado a la zona del empleado.');msg.className='feedback success';renderManagerHome();
+});
+$('managerEvaluationForm').addEventListener('submit',e=>{
+ e.preventDefault();const form=e.currentTarget;if(!form.checkValidity()){form.reportValidity();return;}const emp=currentEmployee(),fd=new FormData(form),scores={};let reinforces=0;evaluationCriteria.forEach((c,i)=>{const score=Number(fd.get('q'+i));scores[c]=score;const area=criterionAreaMap[c];emp.areas=emp.areas||{};emp.areas[area]=emp.areas[area]||[];emp.areas[area].push(score);if(score<=2){reinforcementFor(emp,area,'Evaluación','A mejorar');reinforces++;}});emp.evaluations=emp.evaluations||[];emp.evaluations.push({date:'Día '+emp.day,scores,note:$('managerEvaluationNote').value.trim()});data.managerActivity.unshift({kind:reinforces?'alert':'positive',text:'Evaluación guardada para '+emp.name+(reinforces?' · '+reinforces+' refuerzo(s) asignado(s).':' · sin refuerzos automáticos.'),date:todayLabel()});saveData();$('managerEvaluationMessage').textContent='Evaluación guardada'+(reinforces?' y refuerzos enviados al empleado.':'.');$('managerEvaluationMessage').className='feedback success';renderManagerPerson();
+});
+
+enterGateway();
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').then(r=>r.update()).catch(()=>{}));}
+})();
+
+</script>
 </body>
 </html>
