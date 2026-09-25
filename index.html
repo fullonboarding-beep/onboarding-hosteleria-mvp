@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#17324d" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Onboarding Hostelería · Responsable</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <div class="eyebrow">ÁREA RESPONSABLE · MVP</div>
+        <h1>Onboarding Hostelería</h1>
+      </div>
+      <button id="resetDemoBtn" class="icon-btn" type="button" aria-label="Restablecer datos demo" title="Restablecer datos demo">↻</button>
+    </header>
+
+    <main>
+      <section id="screen-home" class="screen" aria-labelledby="homeTitle">
+        <div class="section-head">
+          <div>
+            <div class="muted">Restaurante Demo</div>
+            <h2 id="homeTitle">Equipo en onboarding</h2>
+          </div>
+          <button id="quickAddBtn" class="btn btn-primary compact" type="button">+ Registro</button>
+        </div>
+        <div id="employeeList" class="stack"></div>
+        <div class="card">
+          <div class="card-title">Pendiente hoy</div>
+          <div class="task-row"><span>Laura García</span><strong>Día 7</strong></div>
+          <div class="task-row"><span>Juan Pérez</span><strong>Plan de mejora</strong></div>
+        </div>
+      </section>
+
+      <section id="screen-person" class="screen hidden" aria-labelledby="personName">
+        <button class="back-btn" type="button" data-go="home">← Equipo</button>
+        <div class="person-head">
+          <div>
+            <h2 id="personName"></h2>
+            <div id="personMeta" class="muted"></div>
+          </div>
+          <span id="personStatus" class="status-pill"></span>
+        </div>
+
+        <div class="card">
+          <div class="progress-head"><span>Formación completada</span><strong id="personProgressText"></strong></div>
+          <div class="progress"><span id="personProgressBar"></span></div>
+        </div>
+
+        <div class="two-col">
+          <button id="personObservationBtn" class="btn btn-secondary" type="button">+ Observación</button>
+          <button id="personEvaluationBtn" class="btn btn-primary" type="button">Evaluar</button>
+        </div>
+
+        <h3>Evolución</h3>
+        <div id="personAreas" class="stack"></div>
+
+        <h3>Registro reciente</h3>
+        <div id="personObservations" class="stack"></div>
+      </section>
+
+      <section id="screen-observe" class="screen hidden" aria-labelledby="observeTitle">
+        <button id="observationBackBtn" class="back-btn" type="button">← Volver</button>
+        <h2 id="observeTitle">Observación rápida</h2>
+        <div class="muted">Pensada para registrarse durante el servicio.</div>
+
+        <form id="observationForm" novalidate>
+          <label class="field-label" for="observationEmployee">Empleado</label>
+          <select id="observationEmployee" class="control" required></select>
+
+          <fieldset class="fieldset-reset">
+            <legend class="field-label">Tipo</legend>
+            <div class="choice-stack">
+              <label class="choice"><input type="radio" name="observationType" value="Positivo" checked /> <span><strong>+ Punto positivo</strong><small>Conducta que conviene reforzar.</small></span></label>
+              <label class="choice"><input type="radio" name="observationType" value="A mejorar" /> <span><strong>△ A mejorar</strong><small>Aspecto a corregir o entrenar.</small></span></label>
+              <label class="choice"><input type="radio" name="observationType" value="Incidencia" /> <span><strong>! Incidencia</strong><small>Hecho relevante que requiere seguimiento.</small></span></label>
+            </div>
+          </fieldset>
+
+          <label class="field-label" for="observationArea">Área</label>
+          <select id="observationArea" class="control" required>
+            <option>Producto</option>
+            <option>Mise en place</option>
+            <option>Servicio</option>
+            <option>Comunicación</option>
+            <option>Anticipación</option>
+            <option>Trabajo en equipo</option>
+            <option>Adaptación al sistema</option>
+          </select>
+
+          <label class="field-label" for="observationNote">Nota breve</label>
+          <textarea id="observationNote" class="control" rows="4" maxlength="180" placeholder="Ej.: Se anticipó a reponer material antes del servicio." required></textarea>
+          <div class="field-help"><span id="noteCounter">0</span>/180 caracteres</div>
+
+          <button class="btn btn-primary full" type="submit">Guardar observación</button>
+          <div id="observationMessage" class="feedback" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <section id="screen-evaluate" class="screen hidden" aria-labelledby="evaluationTitle">
+        <button id="evaluationBackBtn" class="back-btn" type="button">← Ficha</button>
+        <div class="muted">Evaluación de seguimiento</div>
+        <h2 id="evaluationTitle"></h2>
+        <div class="scale-note">1 No cumple · 2 En desarrollo · 3 Cumple · 4 Destaca</div>
+
+        <form id="evaluationForm" novalidate></form>
+        <div id="evaluationMessage" class="feedback" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegación principal">
+      <button type="button" data-nav="home"><span>⌂</span><small>Equipo</small></button>
+      <button type="button" data-nav="observe"><span>＋</span><small>Registro</small></button>
+      <button type="button" data-nav="evaluate"><span>✓</span><small>Evaluar</small></button>
+    </nav>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
