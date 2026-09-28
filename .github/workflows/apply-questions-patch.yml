@@ -1,0 +1,39 @@
+name: Apply onboarding questions patch
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/apply_questions_patch.py"
+      - ".github/workflows/apply-questions-patch.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Apply guarded patch
+        run: python scripts/apply_questions_patch.py
+      - name: Validate changed file
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('index.html').read_text(encoding='utf-8')
+          required=['managerQuestions','managerQuestionsCount','lessonQuestionStatus','Responder y marcar como resuelta','Duda enviada al responsable']
+          missing=[x for x in required if x not in s]
+          if missing:
+              raise SystemExit('Missing markers: '+', '.join(missing))
+          print('Validated markers:', ', '.join(required))
+          PY
+      - name: Commit only index.html
+        run: |
+          git config user.name "fullonboarding-beep"
+          git config user.email "full.onboarding@gmail.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Conecta dudas del empleado con la empresa"
+          git push
