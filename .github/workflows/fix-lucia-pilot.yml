@@ -1,0 +1,36 @@
+name: Fix Lucia pilot identity
+on:
+  push:
+    paths:
+      - 'scripts/fix_lucia_pilot.py'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply Lucia patch
+        run: python scripts/fix_lucia_pilot.py
+      - name: Validate expected pilot identity
+        run: |
+          grep -qi 'Luciaamaralcorrea@gmail.com' index.html
+          ! grep -qi 'adrianstenerife@gmail.com' index.html
+          ! grep -q 'Juan Pérez' index.html
+      - name: Validate JavaScript syntax
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path('index.html').read_text(encoding='utf-8')
+          js=re.findall(r'<script>(.*?)</script>',s,re.S)[-1]
+          Path('/tmp/app.js').write_text(js,encoding='utf-8')
+          PY
+          node --check /tmp/app.js
+      - name: Commit application
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Corrige identidad de Lucía en el piloto' || exit 0
+          git push
