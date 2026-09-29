@@ -29,7 +29,7 @@
   <div class="topbar"><button class="home-btn js-home" type="button">← Inicio</button></div>
   <div class="login-wrap card">
     <div class="eyebrow">ACCESO EMPLEADO</div><h2>Zona de formación</h2>
-    <label class="field-label" for="employeeUser">Correo</label><input id="employeeUser" class="control" type="email" autocomplete="username" value="adrianstenerife@gmail.com">
+    <label class="field-label" for="employeeUser">Correo</label><input id="employeeUser" class="control" type="email" autocomplete="username" value="Luciaamaralcorrea@gmail.com">
     <label class="field-label" for="employeePass">Contraseña</label><input id="employeePass" class="control" type="password" autocomplete="current-password" placeholder="Tu contraseña">
     <button id="employeeLoginBtn" class="btn btn-teal btn-full" type="button" style="margin-top:16px">Entrar</button>
     <button id="employeeSignupBtn" class="btn btn-secondary btn-full" type="button" style="margin-top:9px">Activar acceso por primera vez</button>
@@ -77,7 +77,7 @@
 
 <section id="screen-manager" class="screen">
   <div class="topbar"><div class="brand"><small>ÁREA EMPRESA</small><h1>Seguimiento del onboarding</h1></div><button class="home-btn js-home" type="button">Inicio</button></div>
-  <div class="card manager-employee"><div><div class="eyebrow">EMPLEADO ACTIVO</div><h2 id="managerEmployeeName" style="margin-bottom:5px">Juan Pérez</h2><div id="managerEmployeeMeta" class="muted"></div></div><span id="managerStatus" class="status">En seguimiento</span></div>
+  <div class="card manager-employee"><div><div class="eyebrow">EMPLEADO ACTIVO</div><h2 id="managerEmployeeName" style="margin-bottom:5px">Lucía</h2><div id="managerEmployeeMeta" class="muted"></div></div><span id="managerStatus" class="status">En seguimiento</span></div>
   <div class="summary-grid">
     <div class="metric"><small>Formación</small><strong id="managerTrainingMetric">0%</strong></div>
     <div class="metric"><small>Evaluación</small><strong id="managerEvalMetric">—</strong></div>
@@ -123,7 +123,7 @@ const KEY='onboarding_integrated_demo_v3';
 const SUPABASE_URL='https://qmnqosftyinbzsypuyqa.supabase.co';
 const SUPABASE_KEY='sb_publishable_KkxBCTZTf7XPZqmwj5tAYw_LDozNheK';
 const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
-const credentials={employee:{user:'adrianstenerife@gmail.com'},manager:{user:'1982mag.lil.aar@gmail.com'}};
+const credentials={employee:{user:'Luciaamaralcorrea@gmail.com'},manager:{user:'1982mag.lil.aar@gmail.com'}};
 const modules=[
  {day:1,title:'Conoce tu puesto y tu equipo',area:'Integración y comunicación',goal:'Identifica tus funciones, a quién pedir ayuda y cómo comunicar una incidencia.',points:['Confirma quién es tu responsable directo y quién cubre su ausencia.','Pregunta qué decisiones puedes tomar y cuáles requieren autorización.','Cuando detectes un problema, comunica el hecho y su urgencia por el canal acordado.'],practice:'Identifica a tu responsable y ensaya cómo comunicarías una incidencia durante el servicio.',question:'Si un cliente pregunta por un alérgeno y no tienes información fiable, ¿qué haces?',options:['Le das una respuesta probable.','Consultas la información oficial y avisas al responsable antes de responder.','Cambias de tema.'],correct:1,why:'La información debe confirmarse con la fuente y el protocolo del establecimiento.'},
  {day:3,title:'Prepara el servicio',area:'Mise en place y organización',goal:'Revisa tu zona, encuentra material y comunica lo que falta antes del servicio.',points:['Consulta la lista de preparación de tu puesto y turno.','Comprueba limpieza, material y reposiciones.','Comunica faltantes y prioridades antes de abrir.'],practice:'Realiza la preparación de tu zona con la lista real del establecimiento.',question:'Falta material imprescindible diez minutos antes de abrir. ¿Qué haces primero?',options:['Esperas a que alguien lo detecte.','Lo comunicas y acuerdas una solución con el responsable.','Improvisas sin avisar.'],correct:1,why:'Anticiparse también consiste en comunicar faltantes a tiempo.'},
@@ -133,7 +133,7 @@ const modules=[
 ];
 const criteria=['Conocimiento de producto','Mise en place','Comunicación','Anticipación','Trabajo en equipo','Adaptación al sistema'];
 const areaToModule={'Producto':3,'Conocimiento de producto':3,'Mise en place':1,'Servicio':2,'Comunicación':0,'Anticipación':2,'Trabajo en equipo':0,'Adaptación al sistema':4};
-const blankState=()=>({employee:{id:'juan',name:'Juan Pérez',role:'Camarero sala',day:7,activities:{}},observations:[],evaluations:[],alerts:[],questions:[]});
+const blankState=()=>({employee:{id:'juan',name:'Lucía',role:'Camarero sala',day:7,activities:{}},observations:[],evaluations:[],alerts:[],questions:[]});
 let state=load();let currentLesson=0;let activeRole=null;let currentProfile=null;let questionsChannel=null;
 const $=id=>document.getElementById(id);
 function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.employee&&x.employee.activities&&Array.isArray(x.observations)&&Array.isArray(x.evaluations)&&Array.isArray(x.alerts)){if(!Array.isArray(x.questions))x.questions=[];Object.entries(x.employee.activities).forEach(([i,r])=>{if(r&&r.note&&!x.questions.some(q=>q.moduleIndex===Number(i)&&q.text===r.note)){x.questions.push({id:'legacy-'+i+'-'+Date.now(),employeeId:x.employee.id,moduleIndex:Number(i),moduleTitle:modules[Number(i)]?modules[Number(i)].title:'Módulo',area:modules[Number(i)]?modules[Number(i)].area:'Formación',text:r.note,createdAt:r.updatedAt||'Anterior',updatedAt:r.updatedAt||'Anterior',status:'pending',answer:'',answeredAt:null})}});localStorage.setItem(KEY,JSON.stringify(x));return x;}}catch(e){}return blankState()}
